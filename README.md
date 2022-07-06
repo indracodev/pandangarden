@@ -19,13 +19,13 @@ PANDANGARDEN-Master
 
 php artisan make:model nama_model -m
 example
-php artisan make:model tenant_model -r 
+php artisan make:model tb_customer -r 
 
 ## Membuat Resource
 
 php artisan make:resource nama_resource
 example :
-php artisan make:resource TenantResource
+php artisan make:resource tb_customerResource
 
 ## Membuat Controller
 php artisan make:controller Api\TenantController -r 

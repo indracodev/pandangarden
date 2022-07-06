@@ -17,3 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+/**
+ * route resource posts
+ */
+// Route::apiResource('/tb_customers', App\Http\Controllers\TbCustomerController::class);
+
+Route::apiResource('/test', App\Http\Controllers\Api\TbCustomerController::class);

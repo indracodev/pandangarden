@@ -2,38 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\tb_customer;
+use App\Models\tb_order;
 use Illuminate\Http\Request;
-use App\Models\vis_kota;
 use App\Http\Controllers\Controller;
-use App\Http\Resources\CustomerResource;
+use App\Http\Resources\OrderResource;
 use Illuminate\Support\Facades\Validator;
 use DB;
 
-class TbCustomerController extends Controller
+class TbOrderController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
-    protected $tb_customer;
-    public function __construct(tb_customer $tb_customer)
-    {
-        $this->tb_customer = $tb_customer;
-    }
     public function index()
     {
-        $arrayresult = [];
-        $result = [
-            'name' => 'EVENT_APPROVAL',
-            'data' => tb_customer::all(),
-            'status' => 'Get data success', 
-            'code' => 200
-        ];
-
-        return new CustomerResource($result);
+        return new OrderResource(tb_order::all());
     }
 
     /**
@@ -60,10 +45,10 @@ class TbCustomerController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\tb_customer  $tb_customer
+     * @param  \App\Models\tb_order  $tb_order
      * @return \Illuminate\Http\Response
      */
-    public function show(tb_customer $tb_customer)
+    public function show(tb_order $tb_order)
     {
         //
     }
@@ -71,10 +56,10 @@ class TbCustomerController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\tb_customer  $tb_customer
+     * @param  \App\Models\tb_order  $tb_order
      * @return \Illuminate\Http\Response
      */
-    public function edit(tb_customer $tb_customer)
+    public function edit(tb_order $tb_order)
     {
         //
     }
@@ -83,10 +68,10 @@ class TbCustomerController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\tb_customer  $tb_customer
+     * @param  \App\Models\tb_order  $tb_order
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, tb_customer $tb_customer)
+    public function update(Request $request, tb_order $tb_order)
     {
         //
     }
@@ -94,10 +79,10 @@ class TbCustomerController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\tb_customer  $tb_customer
+     * @param  \App\Models\tb_order  $tb_order
      * @return \Illuminate\Http\Response
      */
-    public function destroy(tb_customer $tb_customer)
+    public function destroy(tb_order $tb_order)
     {
         //
     }
